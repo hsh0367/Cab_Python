@@ -64,11 +64,14 @@ class Dec:
         image_url = None
         try:
             if platform.system() == 'Darwin':
-                DRIVER_PATH = os.path.join(os.getcwd(), '../chromedriver')
+                DRIVER_PATH = os.path.join(os.getcwd(), '../driver/chromedriver')
             elif platform.system() == 'Windows':
-                DRIVER_PATH = os.path.join(os.getcwd(), '../chromedriver.exe')
-            
-            driver = webdriver.Chrome(executable_path=DRIVER_PATH)
+                DRIVER_PATH = os.path.join(os.getcwd(), '../driver/chromedriver.exe')
+            options = webdriver.ChromeOptions()
+            options.add_argument('headless')
+            options.add_argument('window-size=1920x1080')
+
+            driver = webdriver.Chrome(DRIVER_PATH, chrome_options=options)
             # 일반적으로 다 로드 될때까지 3초정도 기다려줍니다
             driver.implicitly_wait(3)
             # url 접근
@@ -99,6 +102,7 @@ class Dec:
         카드의 사진정보를 보여준다
         '''
         f = urlopen(self.artwork)
+        plt.figure(figsize=(5, 10))
         plt.axis('off')
         image = plt.imread(f)
         plt.imshow(image)
