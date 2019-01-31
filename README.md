@@ -8,5 +8,3 @@
 pip install requirements.txt
 ```
 
----
-본 저작권은 강원대학교 동아리 C.A.B에 있
