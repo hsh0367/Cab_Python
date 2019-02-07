@@ -1,8 +1,8 @@
 # Cab_Python
 ---
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-
 강원대학교 동아리 C.A.B(Catch A Bug) 파이썬 스터디 강의자료 입니다.
+
 ---
 Getting Started
 
